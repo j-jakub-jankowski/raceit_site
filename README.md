@@ -1,2 +1,2 @@
-# raceit_site
+# RaceIT
 Site to show information about race and competitors results. Used in LAN in the place of race office.
