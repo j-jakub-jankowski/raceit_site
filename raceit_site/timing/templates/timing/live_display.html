@@ -1,0 +1,56 @@
+{% extends 'timing/base.html' %}
+
+
+{% block content %}
+
+<table class="table" id="liveTable">
+    <thead>
+    <tr>
+        <th scope="col">Bib</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Point</th>
+        <th scope="col">Time</th>
+    </tr>
+    </thead>
+</table>
+
+<script>
+    function addRow(bib, name, surname, point, time) {
+          var table = document.getElementById("liveTable");
+          var row = table.insertRow(1);
+          var cellBib = row.insertCell(0);
+          var cellName = row.insertCell(1);
+          var cellSurname = row.insertCell(2);
+          var cellPoint = row.insertCell(3);
+          var cellTime = row.insertCell(4);
+          cellBib.innerHTML = bib;
+          cellName.innerHTML = name;
+          cellSurname.innerHTML = surname;
+          cellPoint.innerHTML = point;
+          cellTime.innerHTML = time;
+    }
+
+    var LiveDisplaySocket = new WebSocket(
+        'ws://' + window.location.host +
+        '/ws/live_display');
+
+    LiveDisplaySocket.onmessage = function(e) {
+        var data = JSON.parse(e.data);
+        var bib = data['bib'];
+        var name = data['name'];
+        var surname = data['surname'];
+        var point = data['point'];
+        var time = data['time'];
+        addRow(bib, name, surname, point, time)
+    };
+
+    LiveDisplaySocket.onclose = function(e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+
+</script>
+
+
+{% endblock %}

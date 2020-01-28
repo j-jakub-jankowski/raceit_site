@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pl-PL">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+    <title>RaceIT</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <button aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-target="#navbarTogglerDemo03" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="{% url 'race' %}">RaceIT</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    {% for race in race_list %}
+    <div class="row">
+        <div class="col-sm">
+            <h1><a href="{% url 'race_info' race.id %}">{{ race.name }}</a></h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <p><strong>Date:</strong> {{ race.date_and_time|date:'d-m-Y' }}</p>
+        </div>
+        <div class="col-sm">
+            <p><strong>Start time:</strong> {{ race.date_and_time|date:'H:i' }}</p>
+        </div>
+        <div class="col-sm">
+            <p><strong>Town:</strong> {{ race.town }}</p>
+        </div>
+        <div class="col-sm">
+            <p><strong>Distance:</strong> {{ race.distance }} km</p>
+        </div>
+    </div>
+    <hr/>
+        <hr/>
+    {% endfor %}
+</div>
+
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

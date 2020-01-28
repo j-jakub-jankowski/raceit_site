@@ -1,0 +1,58 @@
+{% extends 'timing/base.html' %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm">
+            <h1>{{ race_info_data.name }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <p><strong>Date:</strong> {{ race_info_data.date_and_time|date:'d-m-Y' }}</p>
+
+        </div>
+        <div class="col-sm">
+            <p><strong>Start time:</strong> {{ race_info_data.date_and_time|date:'H:i' }}</p>
+
+        </div>
+        <div class="col-sm">
+            <p><strong>Town:</strong> {{ race_info_data.town }}</p>
+
+        </div>
+        <div class="col-sm">
+            <p><strong>Distance:</strong> {{ race_info_data.distance }} km</p>
+
+        </div>
+    </div>
+
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="pills-info-tab" data-toggle="pill" href="#pills-info" role="tab"
+                       aria-controls="pills-info" aria-selected="true">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-rules-tab" data-toggle="pill" href="#pills-rules" role="tab"
+                       aria-controls="pills-rules" aria-selected="false">Rules</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="pills-route-tab" data-toggle="pill" href="#pills-route" role="tab"
+                       aria-controls="pills-route" aria-selected="false">Route</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-info" role="tabpanel" aria-labelledby="pills-info-tab">
+                    {{ race_info_data.race_info|safe }}
+                </div>
+                <div class="tab-pane fade" id="pills-rules" role="tabpanel" aria-labelledby="pills-rules-tab">
+                    {{ race_info_data.race_rules|safe }}
+                </div>
+                <div class="tab-pane fade" id="pills-route" role="tabpanel" aria-labelledby="pills-route-tab">
+                    {{ race_info_data.race_route|safe }}
+                </div>
+            </div>
+
+</div>
+
+{% endblock %}
