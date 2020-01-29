@@ -11,14 +11,14 @@ Project is created with:
 
 
 ## Setup
-* Clone the project:
+* Clone the project:  
 `git clone <...>`
-* Create and start a a virtual environment:
-`virtualenv env --no-site-packages`
+* Create and start a a virtual environment:  
+`virtualenv env --no-site-packages`  
 `source env/bin/activate`
-* Install the project dependencies:
+* Install the project dependencies:  
 `pip install -r requirements.txt`
-* To start the development server:
+* To start the development server:  
 `python manage.py runserver`
 
 
@@ -35,5 +35,5 @@ Folder chrono_files contains sample chronotrack file and could be use to test li
 * Loading result data from chronotrack file,
 * Display live results - based on websocket so no need to refresh page.
 
-#TODO:
+# TODO:
 * sorting data in admin panel
