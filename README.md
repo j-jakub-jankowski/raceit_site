@@ -22,8 +22,8 @@ Project is created with:
 `python manage.py runserver`
 
 
-The database contains sample data and superuser:
-`login: test`
+The database contains sample data and superuser:  
+`login: test`  
 `password: test`
 
 Folder chrono_files contains sample chronotrack file and could be use to test live results.
