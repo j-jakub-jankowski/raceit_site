@@ -12,19 +12,19 @@ Project is created with:
 
 ## Setup
 * Clone the project:
-git clone <...>
+`git clone <...>`
 * Create and start a a virtual environment:
-virtualenv env --no-site-packages
-source env/bin/activate
+`virtualenv env --no-site-packages`
+`source env/bin/activate`
 * Install the project dependencies:
-pip install -r requirements.txt
+`pip install -r requirements.txt`
 * To start the development server:
-python manage.py runserver
+`python manage.py runserver`
 
 
 The database contains sample data and superuser:
-login: test
-password: test
+`login: test`
+`password: test`
 
 Folder chrono_files contains sample chronotrack file and could be use to test live results.
 
