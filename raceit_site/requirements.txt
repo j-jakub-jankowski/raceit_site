@@ -10,7 +10,7 @@ channels-redis==2.4.1
 constantly==15.1.0
 cryptography==2.8
 daphne==2.4.1
-Django==3.0.1
+Django==3.0.3
 django-ckeditor==5.8.0
 django-js-asset==1.2.2
 django-tables2==2.2.1
